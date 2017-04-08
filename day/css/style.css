@@ -1,0 +1,239 @@
+body {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  font-size: 0.16rem; }
+
+.header {
+  width: 100%;
+  height: auto;
+  position: relative;
+  text-align: center; }
+  .header a {
+    position: absolute;
+    top: 0.1rem; }
+  .header a:nth-child(1) {
+    left: 5%; }
+  .header a:nth-child(2) {
+    right: 5%; }
+  .header p {
+    line-height: 0.4rem; }
+
+.section {
+  width: 100%;
+  height: auto;
+  flex: 1;
+  overflow-y: scroll; }
+  .section .img img {
+    width: 100%; }
+  .section .main {
+    width: 100%;
+    height: auto;
+    border-bottom: 0.1rem solid #eee; }
+    .section .main p:nth-child(1) {
+      padding-left: 0.1rem;
+      line-height: 0.3rem;
+      color: #4F99F2; }
+    .section .main p {
+      font-size: 0.14rem;
+      color: #333333; }
+    .section .main p:nth-child(2) {
+      padding-left: 0.1rem;
+      line-height: 0.3rem; }
+    .section .main p:nth-child(3) {
+      padding-left: 0.25rem; }
+    .section .main p:nth-child(4) {
+      padding-left: 0.1rem;
+      line-height: 0.3rem; }
+    .section .main p:nth-child(5) {
+      padding-left: 0.25rem; }
+    .section .main p:nth-child(6) {
+      line-height: 0.3rem;
+      padding-left: 0.1rem; }
+    .section .main p:nth-child(7) {
+      padding-left: 0.25rem;
+      padding-bottom: 0.1rem; }
+  .section .cardeasy {
+    width: 100%;
+    height: auto;
+    font-size: 0.14rem; }
+    .section .cardeasy p:nth-child(1) {
+      width: 100%;
+      height: auto;
+      text-align: center;
+      line-height: 0.4rem;
+      background: #4F99F2;
+      color: #fff; }
+    .section .cardeasy p:nth-child(2) {
+      width: 1.6rem;
+      margin: 0.15rem auto; }
+      .section .cardeasy p:nth-child(2) img {
+        width: 1.6rem; }
+    .section .cardeasy p:nth-child(3) {
+      padding-left: 0.1rem;
+      padding-bottom: 0.2rem; }
+  .section .list {
+    width: 100%;
+    height: auto; }
+    .section .list ul {
+      display: flex; }
+      .section .list ul li {
+        flex: 1;
+        text-align: center;
+        font-size: 0.14rem; }
+        .section .list ul li p:nth-child(2) {
+          color: #7BB3F5; }
+    .section .list .list-a {
+      width: 100%;
+      height: auto;
+      display: flex; }
+      .section .list .list-a ol {
+        flex: 1;
+        font-size: 0.12rem;
+        padding-left: 5%;
+        padding-top: 0.1rem; }
+        .section .list .list-a ol li {
+          line-height: 0.2rem;
+          color: #666666; }
+  .section .map {
+    width: 100%;
+    height: auto; }
+    .section .map dl {
+      display: flex;
+      padding: 0.1rem; }
+      .section .map dl dt img {
+        width: 0.45rem;
+        border-radius: 5px; }
+      .section .map dl dd {
+        font-size: 0.12rem; }
+        .section .map dl dd p {
+          line-height: 0.2rem;
+          padding-left: 0.1rem; }
+        .section .map dl dd p:nth-child(2) a {
+          color: #70ACF4;
+          text-decoration: underline; }
+    .section .map p {
+      line-height: 0.3rem;
+      padding-left: 0.1rem;
+      font-size: 0.12rem; }
+    .section .map #allmap {
+      width: 100%;
+      height: 3rem; }
+  .section .material {
+    width: 100%;
+    height: auto;
+    padding-top: 0.2rem;
+    text-align: center; }
+    .section .material p {
+      line-height: 0.2rem;
+      color: #4f99f2; }
+      .section .material p i:nth-child(5) {
+        color: #ccc; }
+    .section .material .material-a {
+      display: flex;
+      -webkit-flex-wrap: wrap; }
+      .section .material .material-a dl {
+        width: 50%;
+        padding: 0.08rem 0; }
+        .section .material .material-a dl dt img {
+          width: 0.8rem; }
+        .section .material .material-a dl dd {
+          padding-top: 0.08rem;
+          color: #4f99f2; }
+  .section .products {
+    width: 100%;
+    height: auto; }
+    .section .products h2 {
+      text-align: center;
+      line-height: 0.3rem;
+      color: #4f99f2;
+      font-size: 0.16rem;
+      font-weight: normal; }
+    .section .products p {
+      position: relative; }
+      .section .products p span {
+        position: absolute; }
+      .section .products p span:nth-child(1) {
+        display: block;
+        width: 0.2rem;
+        height: 0.2rem;
+        text-align: center;
+        line-height: 0.2rem;
+        border-radius: 50%;
+        background: #4f99f2;
+        top: 0.08rem;
+        left: 50%; }
+        .section .products p span:nth-child(1) i {
+          color: #fff; }
+      .section .products p span:nth-child(2) {
+        top: 0.08rem;
+        left: 60%; }
+      .section .products p span:nth-child(3) {
+        top: 0.08rem;
+        right: 5%; }
+    .section .products dl {
+      text-align: center; }
+      .section .products dl dt img {
+        width: 1.18rem; }
+      .section .products dl dd {
+        padding: 0.1rem 0.15rem;
+        font-size: 0.14rem; }
+    .section .products p {
+      padding: 0.1rem 0.12rem;
+      font-size: 0.14rem; }
+    .section .products ul {
+      display: flex;
+      -webkit-flex-wrap: wrap;
+      text-align: center; }
+      .section .products ul li {
+        width: 33.3%;
+        position: relative;
+        font-style: 0.1rem;
+        line-height: 0.3rem; }
+        .section .products ul li i {
+          display: block;
+          width: 0.2rem;
+          height: 0.2rem;
+          text-align: center;
+          line-height: 0.2rem;
+          border-radius: 50%;
+          background: #4f99f2;
+          position: absolute;
+          top: 0.05rem;
+          left: 1%;
+          color: #fff; }
+  .section .sj {
+    width: 100%;
+    height: auto; }
+    .section .sj ul {
+      padding: 0 0.1rem; }
+      .section .sj ul li {
+        line-height: 0.4rem; }
+        .section .sj ul li i {
+          float: right; }
+    .section .sj h2 {
+      text-align: center;
+      line-height: 0.3rem;
+      color: #4f99f2;
+      font-size: 0.16rem;
+      font-weight: normal; }
+    .section .sj .sj-a {
+      display: flex;
+      text-align: center; }
+      .section .sj .sj-a dl {
+        flex: 1; }
+        .section .sj .sj-a dl dt img {
+          width: 1.02rem; }
+        .section .sj .sj-a dl dd p {
+          font-size: 0.1rem; }
+        .section .sj .sj-a dl dd p:nth-child(3) i {
+          color: #4f99f2; }
+        .section .sj .sj-a dl dd p:nth-child(3) i:nth-child(5) {
+          color: #ccc; }
+
+/*# sourceMappingURL=style.css.map */
