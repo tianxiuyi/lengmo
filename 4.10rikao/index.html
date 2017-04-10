@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+		
+			var arr = [1,1,2,8,7,5],arr1=[];
+			function fun(){
+				for(var i=0;i<arr.length;i++){
+					if(arr1.indexOf(arr[i])==-1){
+						arr1.push(arr[i])
+					}
+				}
+				return arr1
+			}
+			console.log(fun())
+			
+			var arr2=["11","11","22","3","3"];
+			function fun1(){
+				var num={},
+					arr3=[];
+				for(var i=0;i<arr2.length;i++){
+					if(!num[arr2[i]]){
+						arr3.push(arr2[i]);
+						num[arr2[i]]=1
+					}
+				}
+				console.log(arr3)
+			}
+			fun1()
+		</script>
+	</body>
+</html>
