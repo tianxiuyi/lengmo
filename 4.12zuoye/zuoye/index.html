@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/iconfont.css">
+</head>
+<body ng-app="app" ng-controller="ctrl">
+    <header class="header">
+        <a href="#"><i class="icon iconfont icon-fanhui2"></i></a>
+        <a href="#"><i class="icon iconfont icon-shouye2"></i></a>
+        <p>订单支付</p>
+    </header>
+    <section class="section">
+    	<div class="text">
+    		<p>路飞<span>138****8888</span></p>
+    		<p><i class="icon iconfont icon-zhoubian1"></i>北京市海淀区知春路区知春路<i class="icon iconfont icon-gengduo1"></i></p>
+    		<img src="images/a2.png" alt="">
+    	</div>
+    	<div class="chanpin">
+    		<div class="p">
+    			<p><i class="icon iconfont icon-dianpu"></i> 恒之然旗航店</p>
+    		</div>
+    		<dl>
+    			<dt><img src="images/a1.png" alt=""></dt>
+    			<dd>
+    				<p>维维嚼益嚼水果大豆棒橙味维维嚼</p>
+    				<p>益嚼水果大豆棒橙味大豆</p>
+    				<p>￥{{dj}}.00</p>
+    				<p><s>￥1000.00</s></p>
+    				<p><span ng-click="decrement()">-</span><span>{{count}}</span><span ng-click="increment()">+</span></p>
+    			</dd>
+    		</dl>
+    		<div class="zj">
+    			<p><span>商品总金额:</span><span>￥{{count1}}.00</span></p>
+    			<p><span>运费:</span><span>￥10.00</span></p>
+    			<p><span>总额(含运费):</span><span>￥{{zj}}.00</span></p>
+    		</div>
+    	</div>
+    	<div class="zhifu">
+    		<div class="zhifu-a">
+    			<span>金额支付￥100.00</span>
+				<label class="toggle_radio">
+					<input type="checkbox" ng-click="btn1()" ng-checked="jj1">
+					<div class="turn">
+						<div class="turn_off"></div>
+					</div>
+				</label>
+    		</div>
+    		<div class="zhifu-a">
+    			<span>奖金支付￥100.00</span>
+				<label class="toggle_radio">
+					<input type="checkbox">
+					<div class="turn">
+						<div class="turn_off"></div>
+					</div>
+				</label>
+    		</div>
+    	</div>
+    </section>
+    <footer class="footer">
+    	<div class="footer-a">
+    		<p>总结：￥{{tj}}.00</p>
+    		<p>(含运费)</p>
+    		<p ng-click="submit()">提交订单</p>
+    	</div>
+    </footer>
+    <div class="box" ng-show="aa">
+    	金额不足，请选择其他支付方式!
+    </div>
+    <script type="text/javascript" src="js/angular.js"></script>
+    <script type="text/javascript">
+        var app = angular.module("app",[]);
+        var controller = angular.module("controller",[]);
+    	app.controller("ctrl",function($scope){
+            $scope.count=1;
+            $scope.dj=988.00;
+            $scope.count1=$scope.count*$scope.dj;
+            $scope.zj=$scope.count*$scope.dj+10;
+            $scope.tj=$scope.zj;
+            $scope.aa=false;
+            $scope.jj1=false;
+            $scope.jj2=false;
+            $scope.decrement = function(){
+                if($scope.count>1){
+                    $scope.count--;
+                    $scope.count1=$scope.count*$scope.dj;
+                    $scope.zj=$scope.count1+10;
+                    $scope.tj=$scope.zj
+                }
+            }
+            $scope.increment = function(){
+                if($scope.count<10){
+                    $scope.count++;
+                    $scope.count1=$scope.count*$scope.dj;
+                    $scope.zj=$scope.count1+10;
+                    $scope.tj=$scope.zj
+                }
+            }
+            $scope.submit = function(){
+                if($scope.tj>1000){
+                    $scope.aa=true;
+                }else{
+                    $scope.aa=false;
+                }
+            }
+            $scope.btn1 = function(){
+                if($scope.jj1==false){
+                    $scope.jj1=true;
+                    $scope.tj=$scope.tj-100;
+                }else{
+                    $scope.jj1=false;
+                    $scope.tj=$scope.zj
+                }
+            }
+    	})
+    </script>
+</body>
+</html>
