@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		span{
+			display: block;
+			width: 40px;
+			height: 30px;
+			border: 1px solid #ccc;
+			float: left;
+			text-align: center;
+			line-height: 30px;
+		}
+	</style>
+</head>
+<body ng-app="app" ng-controller="cril">
+	<p>单价：{{dj}}元</p>
+	<span ng-click="btn()">-</span><span>{{ji}}</span><span ng-click="btn1()">+</span>
+	<p>总价：{{zj}}元</p>
+	<script type="text/javascript" src="js/angular.js"></script>
+	<script type="text/javascript">
+		var app = angular.module("app",[]);
+		app.controller("cril",function($scope){
+			$scope.ji=1;
+			$scope.dj=99;
+			$scope.zj=99;
+			$scope.btn = function(){
+				if($scope.ji>1){
+					$scope.ji--
+					$scope.zj=$scope.dj*$scope.ji
+				}
+			}
+			$scope.btn1 = function(){
+				if($scope.ji<10){
+					$scope.ji++
+					$scope.zj=$scope.dj*$scope.ji
+				}
+			}
+		})	
+	</script>
+</body>
+</html>
