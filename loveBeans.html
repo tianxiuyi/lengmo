@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="full-screen" content="yes">
+  <meta name="x5-fullscreen" content="true">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/loveBeans.css" />
+  <link rel="stylesheet" href="css/iconfont.css" />
+</head>
+<body>
+	<div class="shake">
+		<div class="shake_a">
+			<p><i class="iconfont icon-back"></i></p>
+			<p>摇一摇挥舞荧光棒</p>
+			<img id="img" src="img/yingguangbang@3x.png" alt="" />
+			<p id="start">开始</p>
+			<p>活动规则</p>
+			<p id="start1">倒计时<br />&nbsp;&nbsp;&nbsp;&nbsp;<span>3</span></p>
+			<p id="start2"><a>30</a><br /><span>倒计时</span></p>
+			<p id="start3" style="color: red;"></p>
+		</div>
+	</div>
+	<script src="js/jquery-1.8.3.min.js"></script>
+  <script>
+  	window.onload = function(){
+  		var seT = null,seT1 = null,sIv = null,shake = 0;
+  		$('#start').click(function(){
+				$('#start1 span').html('3')
+				$('#start2 a').html('30')
+  			shake = 0;
+				clearTimeout(sIv);
+  			$(this).hide();
+  			$('#start1').show();
+  			sIv = setInterval(function(){
+  				var start1 = $('#start1 span').html();
+  				$('#start1 span').html(start1-1);
+  				if(start1 <= 0){
+  					$('#start1').hide();
+  					$('#start2').show();
+  					var start2 = $('#start2 a').html();
+  					$('#start2 a').html(start2-1);
+	  				if(start2 <= 0){
+	  					clearTimeout(sIv);
+	  					$('#start1').hide();
+	  					$('#start2').hide();
+	  					$('#start').show();
+	  					$('#img').removeClass('shake-rotate');
+	  					//在这跳转摇了几次的页面；
+					    location.href = 'loveBeans1.html?a='+shake;
+	  				}else{
+							//运动事件监听
+							if(window.DeviceMotionEvent) {
+							  window.addEventListener('devicemotion',deviceMotionHandler,false);
+							}else{
+                alert('您的设备不支持摇一摇哦');
+							}
+							//获取加速度信息
+							//通过监听上一步获取到的x, y, z 值在一定时间范围内的变化率，进行设备是否有进行晃动的判断。
+							//而为了防止正常移动的误判，需要给该变化率设置一个合适的临界值。
+							var SHAKE_THRESHOLD = 200;
+							var last_update = 0;
+            	var x = y = z = last_x = last_y = last_z = 0;
+							function deviceMotionHandler(eventData) {
+                var acceleration = eventData.accelerationIncludingGravity;
+                var curTime = new Date().getTime();
+                var diffTime  = curTime-last_update;
+						    if (diffTime > 120) {
+                  last_update = curTime;
+						      x = acceleration.x;
+						      y = acceleration.y;
+						      z = acceleration.z;
+                  var speed = Math.abs(x + y + z - last_x - last_y - last_z) / diffTime * 1000;
+					       
+					        if(speed > SHAKE_THRESHOLD) {
+					          	shake++;
+											$('#img').addClass('shake-rotate');
+					        }
+					        last_x = x;
+					        last_y = y;
+					        last_z = z;
+						    }
+							}
+	  				}
+  				}
+  			},1000)
+  		
+  		})
+  	}
+  </script>
+</body>
+</html>
